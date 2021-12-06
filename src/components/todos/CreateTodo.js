@@ -12,9 +12,13 @@ class CreateTodo extends Component {
     });
   };
 
+  // note that the last line of this function will reset this component's state and cause a rerender of this page.
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
+    this.setState({
+      text: "",
+    })
   }
   
   render() {
